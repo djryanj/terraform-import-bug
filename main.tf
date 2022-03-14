@@ -15,10 +15,11 @@ resource "azurerm_resource_group" "vms" {
 }
 
 # resource "azurerm_public_ip" "this" {
-#   for_each = local.vms
+#   for_each            = local.vms
 #   name                = "${each.key}-pip"
 #   location            = "westus2"
 #   resource_group_name = azurerm_resource_group.vms.name
+#   allocation_method   = "Dynamic"
 # }
 
 module "vms" {
